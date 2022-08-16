@@ -1,3 +1,24 @@
+/* стиль красивенькой закругленной картинки с белой рамочкой и тенькой */
+.rounded-img {
+  height: 10rem;
+  width: 10em;
+  border-radius: 40%;
+  box-shadow: 5px 5px 8px rgba(20, 20, 20, 0.3);
+  padding: 5px;
+  margin-bottom: 1em;
+}
+
+/* тот-же стиль закругленной картинки но уже в карточке */
+.rounded-img-card {
+  height: 10rem !important;
+  width: 10em !important;
+  border-radius: 40% !important;
+  box-shadow: 5px 5px 8px rgba(20, 20, 20, 0.3);
+  padding: 5px;
+  margin-bottom: 1em;
+}
+/* !!!!Это блок стилизации картинки при помещении в контейнер и увеличения при наведении */
+/* во врап создаем бокс под картику с центрированием */
 .wrap {
   /* height: 100vh; */
   display: -webkit-box;
@@ -8,19 +29,32 @@
   align-items: center;
   justify-content: center;
 }
+/* в блоке забираем 50% контейнера под картинку */
 .block {
   width: 50%;
 }
+/* в  .photo ограничиваем видимую область картики размеров окна из класса .block */
 .photo {
   overflow: hidden;
 }
+/* все теги имг в классе .photo ставим 100% доступного места по ширне и высоте и включаем время выполнения действия по увеличению в полсекунды*/
 .photo img {
   width: 100%;
   height: 100%;
   transition: transform 0.5s;
 }
+/* при наведении мышки картику увеличивем в 1,15 раза */
 .photo:hover img {
   transform: scale(1.15);
+}
+
+.photo_notscale {
+  overflow: hidden;
+}
+.photo_notscale img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
 }
 
 img.show {
@@ -31,11 +65,12 @@ img.show {
   color: red;
 }
 
-h1 {
+/* h1 {
   color: #ffffff;
-}
+} */
 
-.c {
+/* ????? */
+/* .c {
   height: 100px;
   background-color: black;
 }
@@ -48,7 +83,7 @@ h1 {
 .b {
   width: 100px;
   height: 50px;
-}
+} */
 
 .card {
   border-radius: 1.5em;

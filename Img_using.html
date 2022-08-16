@@ -27,6 +27,31 @@
     <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="stylesheet" href="style.css" />
+
+    <!-- <script language="JavaScript">
+      var bigsize = "3000"; //Размер большой картинки
+      var smallsize = "1500"; //Размер маленькой картинки
+      function changeSizeImage(im) {
+        if (im.height == bigsize) im.height = smallsize;
+        else im.height = bigsize;
+      }
+    </script> -->
+
+    <!-- картинка открывается в новом окне в нужном размере (в данном случае 1200) -->
+    <script language="JavaScript">
+      function openImageInNewWindow(im) {
+        var win = "width=1200,height=1200";
+        newWin = window.open(im.src, "newWin", win);
+        newWin.focus();
+      }
+      var bigsizeH = "1200"; //Размер большой картинки
+      var smallsize = "1500"; //Размер маленькой картинки
+      function changeSizeImage(im2) {
+        console.log;
+        if (im2.height == 648) im2.height = bigsizeH;
+        else im2.height = 648;
+      }
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
@@ -57,26 +82,26 @@
             <li class="nav-item">
               <a class="nav-link active" href="Img_using.html">Image using</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="useful_resources.html"
+                >Useful resources</a
+              >
+            </li>
           </ul>
         </div>
       </div>
     </nav>
-
+    <!-- Для увеличения картинки при наведении мышки помещаем ее в контенер -->
     <div class="container text-center">
       <div class="row">
-        <h1 class="fw-light fst-italic">Image using praktik</h1>
+        <h1 class="fw-light fst-italic">Image using nuances</h1>
+        <!-- Вот здесь формируем структуру для размещения картинки -->
+        <!-- onclick='this.classList.toggle("show")' -->
         <div class="col-lg-12 mx-auto">
-          <!-- <img
-            width="500px"
-            class="rounded-img"
-            src="sample3.png"
-            alt="sample Git logo"
-          /> -->
           <div class="wrap">
             <div class="block">
               <div class="photo">
                 <img
-                  onclick='this.classList.toggle("show")'
                   src="https://picsum.photos/id/102/1200"
                   alt="Malina/500/200"
                 />
@@ -90,7 +115,57 @@
       </div>
     </div>
 
-    <div class="container my-4">
+    <div class="container text-center">
+      <div class="row">
+        <!-- <h1 class="fw-light fst-italic">Image using nuances</h1> -->
+        <!-- Вот здесь формируем структуру для открытия картинки в увел масштабе по клику -->
+        <!-- onclick='this.classList.toggle("show")' -->
+        <div class="col-lg-12 mx-auto">
+          <div class="wrap">
+            <div class="block">
+              <div class="photo_notscale">
+                <img
+                  onclick="openImageInNewWindow(this)"
+                  src="https://picsum.photos/id/103/1200"
+                  alt="Malina/500/200"
+                />
+              </div>
+            </div>
+          </div>
+          <p class="lead text-muted">
+            Картинка при клике открывается в новом окне в размере 1200х1200. С
+            применением js
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container text-center">
+      <div class="row">
+        <!-- <h1 class="fw-light fst-italic">Image using nuances</h1> -->
+        <!-- Вот здесь формируем структуру для открытия картинки в увел масштабе по клику -->
+        <!-- onclick='this.classList.toggle("show")' -->
+        <div class="col-lg-12 mx-auto">
+          <div class="wrap">
+            <div class="block">
+              <div class="photo_notscale">
+                <img
+                  onclick="changeSizeImage(this)"
+                  src="https://picsum.photos/id/104/1200"
+                  alt="Malina/500/200"
+                />
+              </div>
+            </div>
+          </div>
+          <p class="lead text-muted">
+            Картинка при клике масштабируется в существующем окне в размере
+            1200х1200. С применением js
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="container my-4">
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3"></div>
     </div>
     <table>
@@ -105,5 +180,7 @@
         <td>4</td>
       </tr>
     </table>
+  </body>
+</html> -->
   </body>
 </html>
